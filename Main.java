@@ -1,6 +1,6 @@
 import javax.swing.JFrame;
 
-import view.Game;
+import view.GamePanel;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,7 +10,7 @@ public class Main {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
         
-        Game game = new Game();
+        GamePanel game = new GamePanel();
         
         window.add(game);
         window.pack();
