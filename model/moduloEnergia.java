@@ -1,17 +1,17 @@
 package model;
 
-public class moduloVuelo extends piezaDesplegable {
+public class moduloEnergia extends piezaDesplegable {
 
-    private int datosRecolectados;
+    private int energiaGenerada;
 
-    public moduloVuelo(
+    public moduloEnergia(
             int id,
             String nombre,
             int salud,
             double costoConstruccion) {
 
         super(id, nombre, salud, costoConstruccion);
-        this.datosRecolectados = 0;
+        this.energiaGenerada = 0;
     }
 
     @Override
@@ -20,14 +20,14 @@ public class moduloVuelo extends piezaDesplegable {
             return getNombre() + " está destruido.";
         }
 
-        datosRecolectados += 10;
+        energiaGenerada += 15;
 
         return getNombre()
-                + " recolectó 10 datos científicos."
-                + " Total: " + datosRecolectados;
+                + " generó 15 unidades de energía."
+                + " Total: " + energiaGenerada;
     }
 
-    public int getDatosRecolectados() {
-        return datosRecolectados;
+    public int getEnergiaGenerada() {
+        return energiaGenerada;
     }
 }
