@@ -1,10 +1,10 @@
 package model;
 
-public class moduloEnergia extends piezaDesplegable {
+public class ModuloEnergia extends PiezaDesplegable {
 
     private int energiaGenerada;
 
-    public moduloEnergia(
+    public ModuloEnergia(
             int id,
             String nombre,
             int salud,

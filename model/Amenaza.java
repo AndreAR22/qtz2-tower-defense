@@ -1,16 +1,16 @@
 package model;
 
-public class amenaza {
+public class Amenaza {
 
     private String nombre;
     private int danio;
 
-    public amenaza(String nombre, int danio) {
+    public Amenaza(String nombre, int danio) {
         this.nombre = nombre;
         this.danio = danio;
     }
 
-    public String atacar(piezaDesplegable objetivo) {
+    public String atacar(PiezaDesplegable objetivo) {
         if (!objetivo.estaActivo()) {
             return objetivo.getNombre() + " ya está destruido.";
         }
@@ -32,6 +32,6 @@ public class amenaza {
 
     @Override
     public String toString() {
-        return nombre + " | Daño: " + danio;
+        return nombre + "Daño: " + danio;
     }
 }
