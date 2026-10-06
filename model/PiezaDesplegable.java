@@ -1,14 +1,14 @@
 package model;
 
-public abstract class piezaDesplegable
-        implements Comparable<piezaDesplegable> {
+public abstract class PiezaDesplegable
+        implements Comparable<PiezaDesplegable> {
 
     private int id;
     private String nombre;
     private int salud;
     private double costoConstruccion;
 
-    public piezaDesplegable(
+    public PiezaDesplegable(
             int id,
             String nombre,
             int salud,
@@ -35,7 +35,7 @@ public abstract class piezaDesplegable
     }
 
     @Override
-    public int compareTo(piezaDesplegable otraPieza) {
+    public int compareTo(PiezaDesplegable otraPieza) {
         return Double.compare(
                 this.costoConstruccion,
                 otraPieza.costoConstruccion
@@ -61,9 +61,9 @@ public abstract class piezaDesplegable
     @Override
     public String toString() {
         return "Tipo: " + getClass().getSimpleName()
-                + "ID: " + id
-                + "Nombre: " + nombre
-                + "Salud: " + salud
-                + "Costo: Q" + costoConstruccion;
+                + " | ID: " + id
+                + " | Nombre: " + nombre
+                + " | Salud: " + salud
+                + " | Costo: Q" + costoConstruccion;
     }
 }

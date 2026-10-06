@@ -1,6 +1,8 @@
-import javax.swing.JFrame;
+//import javax.swing.JFrame;
 
-import view.GamePanel;
+import controller.Quetzal2Controller;
+
+//import view.GamePanel;
 import view.TerminalView;
 
 public class Main {
@@ -21,7 +23,7 @@ public class Main {
 
         game.iniciarGameThread();*/
 
-        TerminalView terminal = new TerminalView();
+        TerminalView terminal = new TerminalView(new Quetzal2Controller());
         terminal.inicio();
         
     }
