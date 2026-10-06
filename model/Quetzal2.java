@@ -5,15 +5,15 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class quetzal2 {
+public class Quetzal2 {
 
-    private final ArrayList<piezaDesplegable> modulos;
-    private final ArrayList<amenaza> amenazas;
+    private final ArrayList<PiezaDesplegable> modulos;
+    private final ArrayList<Amenaza> amenazas;
     private final Random random;
 
     private int numeroCiclo;
 
-    public quetzal2() {
+    public Quetzal2() {
         modulos = new ArrayList<>();
         amenazas = new ArrayList<>();
         random = new Random();
@@ -23,47 +23,47 @@ public class quetzal2 {
     }
 
     private void cargarDatosIniciales() {
-        modulos.add(new moduloVuelo(
+        modulos.add(new ModuloVuelo(
                 1, "Cámara orbital", 100, 5000));
 
-        modulos.add(new moduloVuelo(
+        modulos.add(new ModuloVuelo(
                 2, "Sensor climático", 90, 4200));
 
-        modulos.add(new moduloVuelo(
+        modulos.add(new ModuloVuelo(
                 3, "Radar espacial", 95, 6000));
 
-        modulos.add(new moduloTierra(
+        modulos.add(new ModuloTierra(
                 4, "Antena central", 100, 3500));
 
-        modulos.add(new moduloTierra(
+        modulos.add(new ModuloTierra(
                 5, "Antena auxiliar", 85, 2800));
 
-        modulos.add(new moduloTierra(
+        modulos.add(new ModuloTierra(
                 6, "Estación de descarga", 90, 4000));
 
-        modulos.add(new moduloEnergia(
+        modulos.add(new ModuloEnergia(
                 7, "Panel solar norte", 100, 2500));
 
-        modulos.add(new moduloEnergia(
+        modulos.add(new ModuloEnergia(
                 8, "Panel solar sur", 90, 2500));
 
-        modulos.add(new moduloEnergia(
+        modulos.add(new ModuloEnergia(
                 9, "Batería principal", 100, 3200));
 
-        modulos.add(new moduloEnergia(
+        modulos.add(new ModuloEnergia(
                 10, "Batería auxiliar", 80, 2200));
 
-        amenazas.add(new amenaza(
+        amenazas.add(new Amenaza(
                 "Tormenta solar", 15));
 
-        amenazas.add(new amenaza(
+        amenazas.add(new Amenaza(
                 "Radiación espacial", 10));
 
-        amenazas.add(new amenaza(
+        amenazas.add(new Amenaza(
                 "Micrometeorito", 20));
     }
 
-    public List<piezaDesplegable> getModulos() {
+    public List<PiezaDesplegable> getModulos() {
         return modulos;
     }
 
@@ -71,8 +71,8 @@ public class quetzal2 {
         return numeroCiclo;
     }
 
-    public piezaDesplegable buscarPorId(int id) {
-        for (piezaDesplegable modulo : modulos) {
+    public PiezaDesplegable buscarPorId(int id) {
+        for (PiezaDesplegable modulo : modulos) {
             if (modulo.getId() == id) {
                 return modulo;
             }
@@ -81,8 +81,8 @@ public class quetzal2 {
         return null;
     }
 
-    public piezaDesplegable buscarPorNombre(String nombre) {
-        for (piezaDesplegable modulo : modulos) {
+    public PiezaDesplegable buscarPorNombre(String nombre) {
+        for (PiezaDesplegable modulo : modulos) {
             if (modulo.getNombre().equalsIgnoreCase(nombre)) {
                 return modulo;
             }
@@ -101,14 +101,14 @@ public class quetzal2 {
         numeroCiclo++;
 
         // Aquí se aplica el polimorfismo.
-        for (piezaDesplegable modulo : modulos) {
+        for (PiezaDesplegable modulo : modulos) {
             resultados.add(modulo.procesarCiclo());
         }
 
-        piezaDesplegable objetivo = obtenerModuloActivo();
+        PiezaDesplegable objetivo = obtenerModuloActivo();
 
         if (objetivo != null && !amenazas.isEmpty()) {
-            amenaza amenazaSeleccionada = amenazas.get(
+            Amenaza amenazaSeleccionada = amenazas.get(
                     random.nextInt(amenazas.size())
             );
 
@@ -120,10 +120,10 @@ public class quetzal2 {
         return resultados;
     }
 
-    private piezaDesplegable obtenerModuloActivo() {
-        ArrayList<piezaDesplegable> activos = new ArrayList<>();
+    private PiezaDesplegable obtenerModuloActivo() {
+        ArrayList<PiezaDesplegable> activos = new ArrayList<>();
 
-        for (piezaDesplegable modulo : modulos) {
+        for (PiezaDesplegable modulo : modulos) {
             if (modulo.estaActivo()) {
                 activos.add(modulo);
             }
