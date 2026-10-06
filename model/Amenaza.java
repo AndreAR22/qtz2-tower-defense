@@ -32,6 +32,6 @@ public class Amenaza {
 
     @Override
     public String toString() {
-        return nombre + " | Daño: " + danio;
+        return nombre + "Daño: " + danio;
     }
 }

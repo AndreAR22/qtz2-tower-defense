@@ -47,25 +47,25 @@ public class Quetzal2Controller {
                 6, "Estación de descarga", 90, 4000));
 
         qtz2.registrarModulo(new ModuloEnergia(
-                7, "Panel solar norte", 100, 2500));
+                7, "Panel solar 1", 100, 2500));
 
         qtz2.registrarModulo(new ModuloEnergia(
-                8, "Panel solar sur", 90, 2500));
+                8, "Panel solar 2", 90, 2500));
 
         qtz2.registrarModulo(new ModuloEnergia(
                 9, "Batería principal", 100, 3200));
 
         qtz2.registrarModulo(new ModuloEnergia(
-                10, "Batería auxiliar", 80, 2200));
+                10, "Batería de repuesto", 80, 2200));
 
         qtz2.registrarAmenaza(new Amenaza(
-                "Tormenta solar", 15));
+                "Pelea de aliens", 15));
 
         qtz2.registrarAmenaza(new Amenaza(
-                "Radiación espacial", 10));
+                "Ataque de estrellas", 10));
 
         qtz2.registrarAmenaza(new Amenaza(
-                "Micrometeorito", 20));
+                "Colisión con restos de satélite", 20));
     }
 
     public Quetzal2 getQtz2() {

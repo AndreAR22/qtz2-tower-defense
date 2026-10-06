@@ -17,7 +17,7 @@ public class TerminalView {
     }
 
     private void showOpciones() {
-        System.out.println("\n===== DEFENSA DE QTZ2 =====");
+        System.out.println("Tower Defense - Quetzal 2");
         System.out.println("1. Listar módulos");
         System.out.println("2. Buscar por ID");
         System.out.println("3. Buscar por nombre");

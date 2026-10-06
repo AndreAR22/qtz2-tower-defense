@@ -61,9 +61,9 @@ public abstract class PiezaDesplegable
     @Override
     public String toString() {
         return "Tipo: " + getClass().getSimpleName()
-                + " | ID: " + id
-                + " | Nombre: " + nombre
-                + " | Salud: " + salud
-                + " | Costo: Q" + costoConstruccion;
+                + "ID: " + id
+                + "Nombre: " + nombre
+                + "Salud: " + salud
+                + "Costo: Q" + costoConstruccion;
     }
 }
